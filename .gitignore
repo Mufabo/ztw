@@ -1,0 +1,9 @@
+kivybook/
+*__pycache__*
+.buildozer/
+.ipynb_checkpoints/
+.vscode*
+buildozer.spec
+android.txt
+
+
