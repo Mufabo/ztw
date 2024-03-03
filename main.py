@@ -12,28 +12,27 @@ from kivy.graphics.vertex_instructions import Rectangle
 from kivy.graphics.context_instructions import Color
 from kivy.properties import StringProperty, NumericProperty
 from Screens.Menu import MenuScreen
-# from screens.Meditation import MeditationScreen
 # from screens.Donate import DonateScreen
 # from screens.Settings import SettingsScreen
 # from screens.Statistics import StatisticsScreen
 # from screens.About import AboutScreen
 from Data.constants import MAIN_BUTTONS
 from kivy.core.window import Window
-
+from Screens.Meditation import MeditationScreen
 
 class SM(ScreenManager):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         Window.clearcolor = (1,1,1,1)
 
-        #back_to_menu = partial(self.goto, target="menu")
+        back_to_menu = partial(self.goto, target="menu")
 
         #global MAIN_BUTTONS
         self.menu = MenuScreen(name="menu", goto= self.goto)
         self.add_widget(self.menu)
         
-        #self.meditate = MeditationScreen(back_to_menu, name=MAIN_BUTTONS[0])
-        #self.add_widget(self.meditate)
+        self.meditate = MeditationScreen(back_to_menu, name=MAIN_BUTTONS[0])
+        self.add_widget(self.meditate)
         
         #self.settings = SettingsScreen(back_to_menu,name=MAIN_BUTTONS[1])
         #self.add_widget(self.settings)
@@ -60,7 +59,7 @@ sm = SM()
 
 class Ztw(App):
     def build(self):
-        self.icon = 'Resources/logo.png'
+        self.icon = './Resources/logo.png'
         return sm
 
 

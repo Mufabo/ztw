@@ -1,4 +1,11 @@
 MAIN_BUTTONS = ["Meditate", "Settings",  "About"] #, "Donate","Statistics"]
+COLOR_GOLDEN_ROD = [0.8549019607843137, 0.6470588235294118, 0.12549019607843137, 1.0]
+
+import json
+
+with open('/home/fatih/ztw/Data/Settings.json') as f:
+    SETTINGS = json.load(f)
+
 
 # class Settings():
 #     def __init__(self):
